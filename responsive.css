@@ -1,0 +1,228 @@
+/* Responsive birthday layout. Keep text and controls usable at every zoom level. */
+html { -webkit-text-size-adjust:100%; scroll-padding-bottom:110px; }
+body { overflow-wrap:break-word; overflow-x:clip; }
+main, section, .hero-copy, .hero-art, .mission-copy, .letter-copy,
+.route-heading > div, .action-invite > div, .photo-invite > div,
+.screen, .playlist, .fortune-intro, .fortune-machine { min-width:0; }
+img, video { max-width:100%; }
+button, .big-button, .outline-button { max-width:100%; }
+.big-button, .outline-button, .filters button { min-height:48px; font-size:15px; line-height:1.5; }
+.big-button { gap:18px; text-align:left; }
+.big-button > span { flex-shrink:0; }
+.eyebrow { line-height:1.7; }
+.section-heading > p, .gallery-status { font-size:15px; }
+.photo-card .photo-label, .photo-joke { font-size:16px; line-height:1.65; }
+.playlist b { font-size:16px; }
+.playlist small, .legend-meters span { font-size:14px; line-height:1.6; }
+.playlist button { min-height:76px; }
+.cinema .section-heading > p { color:var(--cream); }
+.screen video { display:block; width:100%; height:auto; aspect-ratio:16/9; max-height:70dvh; object-fit:contain; background:#100d14; }
+.chapter-dock a { min-height:48px; }
+.motion-toggle { min-height:44px; font-size:12px; line-height:1.4; }
+.photo-punchline { line-height:1.65; }
+.extra-joke-button { width:auto; min-height:48px; font-size:15px; border-radius:5px; }
+.lightbox-hint { display:block; font-size:14px; line-height:1.6; }
+button:focus-visible, a:focus-visible { outline:3px solid #a72e61; outline-offset:4px; }
+.cinema button:focus-visible, .gate button:focus-visible, dialog button:focus-visible { outline-color:var(--lime); }
+footer { gap:24px; line-height:1.7; }
+
+@media (min-width:701px) and (max-width:1100px) {
+  .hero { grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:20px; }
+  .hero h1 { font-size:clamp(48px,6.7vw,74px); letter-spacing:-3px; }
+  .hero-art { height:450px; }
+  .main-photo { width:73%; height:340px; left:0; top:45px; }
+  .side-photo { width:50%; height:230px; right:0; }
+  .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .birthday-banner { grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:30px; }
+  .birthday-banner h2 { font-size:clamp(40px,5vw,60px); }
+  .mission { gap:35px; }
+  .cinema-layout { grid-template-columns:minmax(0,1fr); }
+  .playlist { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:24px; }
+  .joke-section, .fortune-section { gap:30px; }
+  .joke-paper { padding:26px; }
+  .joke-paper h3 { font-size:30px; }
+  .joke-paper p { font-size:19px; }
+}
+
+@media (max-width:700px) {
+  html { scroll-padding-top:24px; scroll-padding-bottom:160px; }
+  header { height:auto; min-height:78px; gap:12px; padding:18px 5%; padding-top:calc(18px + env(safe-area-inset-top,0px)); }
+  header nav { display:none; }
+  .logo { font-size:22px; flex-shrink:0; }
+  .music-label { font-size:12px; padding:10px 12px; line-height:1.4; }
+  .hero { padding-inline:6%; }
+  .hero h1, .hero h1 .outlined { font-size:clamp(42px,13vw,85px); letter-spacing:-2.5px; line-height:1.06; }
+  .hero .eyebrow { font-size:11px; letter-spacing:1px; }
+  .hero-note { font-size:12px; line-height:1.7; letter-spacing:.6px; }
+  .handwritten { margin-left:0; font-size:clamp(19px,5vw,25px); }
+  .hero-art { width:100%; height:clamp(340px,113vw,470px); max-width:370px; }
+  .main-photo { width:68%; height:auto; aspect-ratio:235/335; left:5%; top:12%; }
+  .side-photo { width:46%; height:auto; aspect-ratio:165/215; right:1%; bottom:3%; }
+  .polaroid img { height:calc(100% - 50px); }
+  .main-photo img, .side-photo img { aspect-ratio:3/4; height:auto; }
+  .polaroid span { height:auto; min-height:40px; font-size:12px; padding:8px 0; line-height:1.4; }
+  .age-badge { width:85px; height:85px; right:2%; font-size:44px; }
+  .photo-hint { bottom:-15px; right:4%; font-size:17px; }
+  .editorial-tag { font-size:12px; }
+  .section { padding-inline:6%; }
+  .section h2 { font-size:clamp(34px,9vw,48px); letter-spacing:-1.6px; line-height:1.12; }
+  .birthday-banner h2 { font-size:clamp(36px,10vw,48px); }
+  .section-heading { display:block; }
+  .section-heading > p { margin-top:18px; font-size:16px; }
+  .section p, .action-invite p, .photo-invite p, .mission-copy p { font-size:16px; line-height:1.8; }
+  .route-heading > span { white-space:normal; font-size:14px; }
+  .quest-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .quest-grid button { padding:24px 16px; }
+  .quest-grid h3 { font-size:19px; }
+  .quest-grid button p { font-size:15px; }
+  .action-invite { flex-wrap:wrap; padding:24px 18px; }
+  .action-invite > div { flex:1 1 220px; }
+  .action-invite h3, .photo-invite h3 { font-size:26px; line-height:1.3; }
+  .music-welcome .cassette-art { width:95px; height:95px; }
+  .photo-invite { padding:24px 18px; }
+  .photo-invite .eyebrow { font-size:11px; letter-spacing:1px; }
+  .invite-hand { display:none; }
+  .invite-sticker { display:none; }
+  .gallery { grid-template-columns:minmax(0,1fr); max-width:480px; margin-inline:auto; gap:35px; }
+  .filters { gap:8px; }
+  .filters button { font-size:14px; padding:12px 14px; }
+  .photo-card .photo-label, .photo-joke { font-size:16px; }
+  .photo-open { font-size:14px; min-height:44px; }
+  .legend-meters { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+  .legend-meters span { font-size:13px; }
+  .legend-meters b { font-size:34px; }
+  .chapter-ribbon { font-size:12px; letter-spacing:.3px; gap:12px; }
+  .film-top { font-size:10px; line-height:1.5; flex-wrap:wrap; }
+  .cinema-layout { grid-template-columns:minmax(0,1fr); }
+  .screen { box-shadow:5px 5px 0 #0006; }
+  .screen video { height:auto; aspect-ratio:4/3; max-height:65dvh; }
+  .playlist { display:grid; grid-template-columns:minmax(0,1fr); }
+  .playlist button { padding:18px 16px; }
+  .playlist small { font-size:14px; }
+  .joke-paper { transform:none; margin-right:6px; }
+  .joke-paper p { font-size:19px; }
+  .joke-paper small, .machine-footnote { font-size:13px; line-height:1.7; }
+  .joke-paper .big-button { font-size:15px; }
+  .fortune-machine { transform:none; padding:35px 18px 25px; }
+  .fortune-window { padding:20px; }
+  .fortune-window p { font-size:clamp(23px,6vw,28px); }
+  .fortune-window small { font-size:15px; }
+  .toast-card p { font-size:clamp(23px,6vw,30px); }
+  .drinks small { font-size:13px; }
+  .finale .wish { transform:none; margin-inline:6px; }
+  .wish h3 { font-size:28px; line-height:1.3; }
+  .chapter-dock { bottom:calc(10px + env(safe-area-inset-bottom,0px)); width:390px; max-width:calc(100% - 24px); padding:5px; gap:0; }
+  .chapter-dock a { width:16.666%; min-width:0; min-height:50px; padding:5px 2px; }
+  .chapter-dock a span { font-size:11px; }
+  .motion-toggle { bottom:calc(85px + env(safe-area-inset-bottom,0px)); left:12px; font-size:12px; padding:10px 14px; min-height:44px; }
+  footer { display:flex; flex-direction:column; align-items:center; text-align:center; padding:35px 6% calc(165px + env(safe-area-inset-bottom,0px)); font-size:13px; }
+  #notification { font-size:16px; max-width:calc(100% - 28px); max-height:50dvh; overflow-y:auto; }
+
+  .gate { padding:calc(80px + env(safe-area-inset-top,0px)) 6% calc(40px + env(safe-area-inset-bottom,0px)); overflow-y:auto; }
+  .gate-inner { width:100%; max-width:540px; padding:0; position:relative; z-index:1; margin:auto; }
+  .gate h1 { font-size:clamp(36px,10vw,65px); letter-spacing:-2px; margin:24px 0; }
+  .gate p { font-size:16px; }
+  .gate small { display:block; font-size:13px; line-height:1.7; }
+  .gate .eyebrow { font-size:11px; letter-spacing:1px; }
+  .gate-top { top:calc(24px + env(safe-area-inset-top,0px)); font-size:10px; letter-spacing:.5px; gap:15px; }
+  .gate-sticker, .gate-heart { display:none; }
+
+  dialog { padding:calc(62px + env(safe-area-inset-top,0px)) 12px calc(82px + env(safe-area-inset-bottom,0px)); }
+  dialog[open] { display:block; }
+  dialog figure { width:100%; max-width:none; height:100%; max-height:100%; overflow-y:auto; overscroll-behavior:contain; padding:4px 4px 12px; }
+  dialog img { max-height:52dvh; max-width:100%; border-width:4px; }
+  dialog figcaption { font-size:16px; line-height:1.6; }
+  .photo-punchline { font-size:17px; padding:18px 14px; }
+  .bonus-punchline { font-size:16px; padding:10px 14px; }
+  .lightbox-hint { font-size:14px; }
+  dialog button { min-width:48px; min-height:48px; }
+  dialog .extra-joke-button { width:auto; min-height:48px; font-size:15px; border-radius:5px; padding:12px 16px; }
+  #close { position:fixed; top:calc(10px + env(safe-area-inset-top,0px)); right:14px; width:48px; height:48px; }
+  #previous, #next { position:fixed; bottom:calc(14px + env(safe-area-inset-bottom,0px)); width:52px; height:52px; font-size:24px; }
+  #previous { left:calc(50% - 66px); }
+  #next { right:calc(50% - 66px); }
+}
+
+@media (max-width:360px) {
+  .quest-grid { grid-template-columns:minmax(0,1fr); }
+  .quest-grid button:last-child { grid-column:auto; }
+  .big-button { padding:17px 18px; gap:12px; }
+  .music-label { padding:8px; font-size:11px; }
+  .legend-meters { grid-template-columns:minmax(0,1fr); gap:16px; }
+  .legend-meters > div { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .legend-meters b { margin:0; }
+}
+
+@media (max-height:550px) and (max-width:1100px) {
+  .gate { align-items:flex-start; padding:65px 6% 30px; overflow-y:auto; }
+  .gate-inner { margin:auto; padding:0; position:relative; z-index:1; }
+  .gate h1 { font-size:clamp(32px,9vh,48px); margin:15px 0; letter-spacing:-1px; }
+  .gate p { margin:12px auto; font-size:15px; }
+  .gate-sticker, .gate-heart { display:none; }
+  .gate .dots { margin:15px 0 8px; }
+  .gate small { font-size:12px; }
+  dialog { padding:54px 70px 18px; }
+  dialog[open] { display:flex; }
+  dialog figure { width:100%; max-width:900px; height:100%; max-height:100%; overflow-y:auto; }
+  dialog img { max-height:58dvh; }
+  #close { position:fixed; top:8px; right:12px; width:44px; height:44px; }
+  #previous, #next { position:fixed; top:calc(50% - 24px); bottom:auto; width:48px; height:48px; }
+  #previous { left:10px; } #next { right:10px; }
+  .motion-toggle { bottom:calc(85px + env(safe-area-inset-bottom,0px)); }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+}
+
+@media (min-width:701px) and (max-width:1100px) {
+  .motion-toggle { bottom:95px; }
+  footer { padding-bottom:165px; }
+}
+@media (min-width:701px) and (max-width:850px) {
+  .joke-section, .fortune-section { grid-template-columns:minmax(0,1fr); }
+  .fortune-machine { max-width:560px; width:calc(100% - 12px); margin-inline:auto; }
+  .duck-sticker { margin-inline:auto; }
+}
+
+/* Four illustrated worlds for the four opening steps. */
+.gate { --gate-accent:#f4b9d2; background:#1c101e; isolation:isolate; transition:opacity .7s,transform .7s,background-color .45s; }
+.gate:before { display:none; }
+.gate-backdrops { position:absolute; inset:0; z-index:-1; pointer-events:none; overflow:hidden; }
+.gate-scene { position:absolute; inset:0; display:block; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .5s ease; }
+.gate-backdrops:after { content:''; position:absolute; inset:0; background:linear-gradient(180deg,#100d1b30,#100d1b05 65%,#100d1b55); }
+.gate[data-scene="0"] .gate-scene-0, .gate[data-scene="1"] .gate-scene-1,
+.gate[data-scene="2"] .gate-scene-2, .gate[data-scene="3"] .gate-scene-3 { opacity:1; }
+.gate[data-scene="1"] { --gate-accent:#f7dd87; background:#06292d; }
+.gate[data-scene="2"] { --gate-accent:#ffc1d5; background:#350e1b; }
+.gate[data-scene="3"] { --gate-accent:#d9c2ff; background:#100936; }
+.gate-inner { position:relative; z-index:1; background:#15121de8; border:1px solid #fff4df35; border-radius:26px; padding:34px 45px; box-shadow:0 16px 50px #0003; }
+.gate em { color:var(--gate-accent); }
+.gate .eyebrow { color:#fff4df; }
+.gate p, .gate small { color:#f1e5eb; }
+.gate .big-button { background:var(--gate-accent); color:#19121f; min-height:52px; }
+.gate .dots i.active { background:var(--gate-accent); }
+.gate-top { z-index:1; color:#fff4df; text-shadow:0 1px 5px #000; }
+.gate-sticker, .gate-heart { display:none; }
+@media(max-width:700px) {
+  .gate-scene { object-fit:contain; object-position:center bottom; }
+  .gate-backdrops:after { background:linear-gradient(180deg,transparent 35%,#100d1b10 60%,#100d1b30); }
+  .gate-inner { padding:25px 19px; border-radius:20px; margin:auto; }
+  .gate h1 { font-size:clamp(34px,9vw,59px); }
+  .gate p { margin:20px auto; }
+}
+@media(max-height:550px) and (max-width:1100px) {
+  .gate-inner { padding:22px 30px; }
+  .gate h1 { font-size:clamp(32px,9vh,48px); margin:15px 0; }
+  .gate p { margin:12px auto; }
+}
+@media(prefers-reduced-motion:reduce) { .gate-scene { transition:none; } }
+
+/* Keep photo navigation above click effects and prevent the page moving behind a photo. */
+body:has(dialog[open]) { overflow:hidden; }
+dialog #close, dialog #previous, dialog #next { z-index:10; }
+
+/* Small screens keep the motion switch in the footer rather than over text. */
+@media(max-width:1100px) {
+  footer .motion-toggle { position:static; inset:auto; transform:none; margin:16px 0 0; display:inline-flex; align-items:center; justify-content:center; font-size:14px; min-height:48px; padding:12px 18px; }
+}

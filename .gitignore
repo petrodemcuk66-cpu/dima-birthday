@@ -1,0 +1,4 @@
+.vercel/
+media/*.jpg
+media/*.jpeg
+media/*.png
